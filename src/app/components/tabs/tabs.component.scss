@@ -1,0 +1,89 @@
+@import "src/app/styles/variables.scss";
+
+$tabHeight: 47px;
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .tab__selection {
+    width: 100%;
+    background: $white;
+    height: $tabHeight;
+    display: flex;
+    justify-content: center;
+
+    .tab__list {
+      display: flex;
+
+      @media (max-width: 571px) {
+        justify-content: center;
+      }
+
+      .tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: 100%;
+        cursor: pointer;
+        color: $placeholder;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 18px;
+        text-decoration: none;
+        position: relative;
+        padding: 0 12px;
+
+        &:not(:last-child) {
+          margin-right: 36px;
+
+          @media (max-width: 400px) {
+            margin-right: 16px;
+          }
+          @media (max-width: 350px) {
+            margin-right: 7px;
+          }
+        }
+
+        &.active {
+          color: $black;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background: $primary;
+            border-radius: 200px 200px 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+
+    ::ng-deep {
+      app-users-list {
+        margin-top: 48px;
+        margin-bottom: 48px;
+        @media (max-width: 1440px) {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+
+      app-loader {
+        height: calc(100vh - #{$tabHeight});
+      }
+    }
+  }
+}

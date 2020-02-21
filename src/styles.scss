@@ -1,0 +1,41 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://rsms.me/inter/inter.css');
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+}
+
+@import 'src/app/styles/variables.scss';
+@import 'src/app/styles/material.scss';
+@import 'src/app/styles/button.scss';
+@import 'src/app/styles/input.scss';
+
+
+.layout__wrapper {
+  width: inherit;
+  max-width: 1344px;
+  padding: 0 48px;
+
+  @media (max-width: 1440px) {
+    width: 100%;
+    padding: 0 28px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 0;
+  }
+}
+
+
+
+

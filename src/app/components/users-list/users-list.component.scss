@@ -1,0 +1,11 @@
+:host {
+  width: inherit;
+
+  app-user {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}

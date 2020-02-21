@@ -1,0 +1,12 @@
+  <div class="container ">
+  <div class="tab__selection">
+    <div class="tab__list layout__wrapper">
+      <a class="tab" [ngClass]="selectedTab == tab.id? 'active':''" *ngFor="let tab of tabs"
+         (click)="changeTab(tab.id)">{{tab.name}}</a>
+    </div>
+  </div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</div>
+

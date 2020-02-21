@@ -1,0 +1,9 @@
+<app-tabs (selectedTabIndex)="changeSelectedTab($event)">
+  <ng-container *ngIf="!loading; else loader">
+    <app-users-list class="layout__wrapper" [users]="users">
+    </app-users-list>
+  </ng-container>
+  <ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template>
+</app-tabs>

@@ -1,0 +1,15 @@
+<div class="user" (click)="editUser()">
+  <img class="user__photo" [src]="baseUrl + user.avatar" onError="this.src='assets/icons/people.png'" alt="">
+  <span class="user__name">
+        {{user.fname | titlecase}} {{user.name  | titlecase | firstCharacter}} {{user.mname  | titlecase | firstCharacter}}
+    </span>
+  <span class="user__balance">
+        Баланс: {{user.balance | number : '1.2-2'}}
+    </span>
+  <span class="user__update">
+        Последнее изменение: {{user.lastUpdatedAt | dayDiff}}
+    </span>
+  <span class="user__status">
+        Подписка {{selectOption[user.status]}}
+    </span>
+</div>

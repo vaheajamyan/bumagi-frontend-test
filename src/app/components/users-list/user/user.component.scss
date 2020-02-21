@@ -1,0 +1,118 @@
+@import "src/app/styles/variables.scss";
+
+$lastUpdateText: #a8a8a8;
+
+:host {
+  width: auto;
+  background: $white;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+
+  .user__photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 16px;
+    object-fit: cover;
+  }
+
+  .user__name {
+    padding-right: 44px;
+    width: 150px;
+  }
+
+  .user__balance {
+    flex: 1;
+  }
+
+  .user__name,
+  .user__balance {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: $black;
+  }
+
+  .user__update {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: $lastUpdateText;
+    padding-right: 54px;
+  }
+
+  .user__status {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    color: $textColor;
+    width: 182px;
+  }
+
+  @media only screen and (max-width: 990px) {
+    > span[class^="user__"] {
+      padding-right: 16px;
+    }
+    .user__name {
+      min-width: fit-content;
+    }
+    .user__balance {
+      flex-basis: auto;
+      min-width: fit-content;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .user__status,
+    .user__update {
+      margin-top: 16px;
+    }
+    .user__update {
+      flex-basis: 55%;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .user__status {
+      flex-basis: 37%;
+      justify-content: flex-end;
+      text-align: end;
+    }
+    .user__name {
+      flex: 1;
+      flex-basis: 50%;
+    }
+    .user__balance {
+      flex: unset;
+    }
+  }
+
+  @media only screen and (max-width: 570px) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    .user__update {
+      flex-basis: unset;
+    }
+
+    .user__photo {
+      margin-right: 0;
+    }
+
+    > span[class^="user__"] {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+}

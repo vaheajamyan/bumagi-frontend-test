@@ -1,0 +1,58 @@
+@import "src/app/styles/variables.scss";
+
+.dropdown__wrapper {
+  color: $black;
+  height: 100%;
+  width: 100%;
+
+  .dropdown__text {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    color: $textColor;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 100%;
+    padding: 0 30px 0 16px;
+
+    &.placeholder {
+      color: rgba($textColor, 0.6);
+    }
+
+    img {
+      position: absolute;
+      right: 16px;
+    }
+  }
+
+  .dropdown__list {
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    max-height: 126px;
+    overflow: auto;
+    background: $white;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border: 1px solid $border;
+    padding: 8px;
+    box-shadow: 0 40px 64px rgba($black, 0.07);
+
+    .dropdown__item {
+      padding: 8px;
+      font-size: 15px;
+      line-height: 20px;
+      cursor: pointer;
+      color: $placeholder;
+
+      &.active {
+        color: $textColor;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "src/app/styles/variables.scss";
+
+:host {
+  background: $bgColor;
+  width: 100vw;
+  min-height: 100vh;
+
+  app-tabs {
+    width: 100vw;
+  }
+}

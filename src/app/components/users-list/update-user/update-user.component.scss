@@ -1,0 +1,75 @@
+@import 'src/app/styles/variables.scss';
+
+.container {
+
+  .dialog__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 34px;
+    border-bottom: 1px solid $border;
+
+    .title {
+      font-weight: bold;
+      font-size: 34px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      color: $black;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 34px;
+
+    .input__wrapper {
+      width: 240px;
+      margin-right: 28px;
+
+      input {
+        box-shadow: 0 7px 64px rgba($black, 0.07);
+      }
+    }
+
+    .button__btn {
+      width: 180px;
+      position: absolute;
+      bottom: 22px;
+      right: 22px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .dialog__header {
+      padding: 15px 20px;
+
+      .title {
+        font-size: 25px;
+        line-height: 26px;
+      }
+
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    form {
+      justify-content: space-around;
+      padding: 20px;
+
+      .input__wrapper {
+        margin-right: 0;
+      }
+    }
+  }
+}

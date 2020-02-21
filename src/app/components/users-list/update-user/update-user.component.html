@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="dialog__header">
+        <span class="title">
+            {{data.fname}} {{data.name}}
+        </span>
+    <img (click)="close()" src="../assets/icons/Path.png" alt="">
+  </div>
+  <div class="content">
+    <form [formGroup]="form" *ngIf="form">
+      <div class="input__wrapper">
+        <input placeholder="fname" formControlName="fname" type="text">
+        <span *ngIf="control('fname').touched && control('fname').invalid && control('fname').errors.required"
+              class="input__error"> The Field Is Required
+        </span>
+      </div>
+      <div class="input__wrapper">
+        <input placeholder="name" formControlName="name" type="text">
+        <span *ngIf="control('name').touched && control('name').invalid && control('name').errors.required"
+              class="input__error"> The Field Is Required
+        </span>
+      </div>
+      <div class="input__wrapper">
+        <input placeholder="mname" formControlName="mname" type="text">
+        <span *ngIf="control('mname').touched && control('mname').invalid && control('mname').errors.required"
+              class="input__error"> The Field Is Required
+        </span>
+      </div>
+      <div class="input__wrapper">
+        <app-select placeholder="Подписка" (changeValue)="changeStatus($event)" [options]="selectOptions"
+                    [selectedValue]="data.status"></app-select>
+        <span *ngIf="control('mname').touched && control('mname').invalid && control('mname').errors.required"
+              class="input__error"> The Field Is
+                    Required</span>
+      </div>
+      <button class="button__btn button__btn-primary" (click)="updateUser()">Сохранить</button>
+    </form>
+  </div>
+</div>

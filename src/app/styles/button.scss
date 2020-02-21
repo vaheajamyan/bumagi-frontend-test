@@ -1,0 +1,19 @@
+.button__btn {
+  display: block;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  min-height: 40px;
+  color: $white;
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 22px;
+  border-radius: 6px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+
+  &-primary {
+    background-color: $primary;
+  }
+}
